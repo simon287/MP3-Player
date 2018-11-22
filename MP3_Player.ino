@@ -1,4 +1,4 @@
-/*2018-11-22 
+/*2018-11-22
 #
 #
 #
@@ -16,9 +16,9 @@ float currenttime = 0;
 
 void setup(){
 
-digitalPin(PushButton_PIN,INPUT);
-digitalPin(PlayOutput_PIN,OUTPUT);
-digitalPin(NextOutput_PIN,OUTPUT);
+pinMode(PushButton_PIN,INPUT);
+pinMode(PlayOutput_PIN,OUTPUT);
+pinMode(NextOutput_PIN,OUTPUT);
 
 }
 
@@ -28,15 +28,15 @@ void loop(){
 if (digitalRead(PushButton_PIN)==HIGH){
 currenttime = millis();
 delay(100);
-#play music 
-digitalWrite(PlayOutput_PIN)=HIGH;
+//#play music
+digitalWrite(PlayOutput_PIN,HIGH);
     while (currenttime - musicduration <0)
     { if (digitalRead(PushButton_PIN)==HIGH)
       {
-      digitalWrite(NextOutput_PIN)=HIGH; 
+      digitalWrite(NextOutput_PIN,HIGH);
       delay(100);
       currenttime = millis();
-      }    
+      }
     }
 }
 delay(300);
